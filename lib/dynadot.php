@@ -16,35 +16,35 @@ class Dynadot{
 	}
 
 	public function search($domains){
-		throw new Exception('Not implemented.');
+		trigger_error("Not implemented.", E_ERROR);
 	}
 
 	public function register($domain,$duration){
-		throw new Exception('Not implemented.');
+		trigger_error("Not implemented.", E_ERROR);
 	}
 
 	public function delete($domain){
-		throw new Exception('Not implemented.');
+		trigger_error("Not implemented.", E_ERROR);
 	}
 
 	public function renew($domain,$duration){
-		throw new Exception('Not implemented.');
+		trigger_error("Not implemented.", E_ERROR);
 	}
 
 	public function getNameservers($domain){
-		throw new Exception('Not implemented.');
+		trigger_error("Not implemented.", E_ERROR);
 	}
 
 	public function setNameservers($domain,$ns){
-		throw new Exception('Not implemented.');
+		trigger_error("Not implemented.", E_ERROR);
 	}
 
 	public function setRenewOptions($domain,$option){
-		throw new Exception('Not implemented.');
+		trigger_error("Not implemented.", E_ERROR);
 	}
 
 	public function setFolder($domain,$folder){
-		throw new Exception('Not implemented.');
+		trigger_error("Not implemented.", E_ERROR);
 	}
 }
 ?>
