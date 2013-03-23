@@ -1,4 +1,4 @@
 <php
-require('lib/dynadot.php')
+require('lib/dynadot.php');
 
 ?>
