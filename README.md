@@ -1,7 +1,7 @@
 Using Dynadot API in PHP
 ===========
 
-Dynadot API example in PHP
+Dynadot API v2 example in PHP
 
 License
 ----------------
