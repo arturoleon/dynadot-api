@@ -1,4 +1,4 @@
-<php
+<?php
 class Dynadot{
 	
 	public $key;
@@ -7,8 +7,10 @@ class Dynadot{
 		$this->key = $key;
 	}
 
-	private function call($params){
-		curl_setopt($ch, CURLOPT_URL, "https://api.dynadot.com/api2.html?key=".$this->$key."&".$params);
+	private function call($command,$params){
+		echo $params;
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, "https://api.dynadot.com/api2.html?command=".$command."&key=".$this->key."&".$params);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER,1);
 		$data = explode(',',curl_exec($ch));
 		curl_close($ch);
@@ -16,35 +18,42 @@ class Dynadot{
 	}
 
 	public function search($domains){
-		trigger_error("Not implemented.", E_ERROR);
+		$i = 0;
+		foreach($domains as $data){
+			$params .= "&domain".$i."=".$data['domain'];
+			$params .= (isset($data['language']) ?  "&language".$i."=".$data['language'] : '');
+			$i++;
+		}
+		return $this->call('search',$params);
 	}
 
 	public function register($domain,$duration){
-		trigger_error("Not implemented.", E_ERROR);
+		//TODO: Allow optional fields option0,option1 and option2
+		return $this->call('register',"&domain=".$domain."&duration=".$duration);
 	}
 
 	public function delete($domain){
-		trigger_error("Not implemented.", E_ERROR);
+		return $this->call('delete',"&domain=".$domain);
 	}
 
 	public function renew($domain,$duration){
-		trigger_error("Not implemented.", E_ERROR);
+		return $this->call('renew',"&domain=".$domain."&duration=".$duration);
 	}
 
 	public function getNameservers($domain){
-		trigger_error("Not implemented.", E_ERROR);
+		return $this->call('get_ns',"&domain=".$domain);
 	}
 
 	public function setNameservers($domain,$ns){
-		trigger_error("Not implemented.", E_ERROR);
+		trigger_error("Not implemented.", E_USER_ERROR);
 	}
 
 	public function setRenewOptions($domain,$option){
-		trigger_error("Not implemented.", E_ERROR);
+		trigger_error("Not implemented.", E_USER_ERROR);
 	}
 
 	public function setFolder($domain,$folder){
-		trigger_error("Not implemented.", E_ERROR);
+		trigger_error("Not implemented.", E_USER_ERROR);
 	}
 }
 ?>
