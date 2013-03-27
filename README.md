@@ -1,8 +1,7 @@
 Using Dynadot API in PHP
 ===========
 
-Dynadot API v2 example in PHP.
-
+Dynadot API v2 example in PHP.  
 API Documentation: http://www.dynadot.com/domain/api2.html
 
 License
