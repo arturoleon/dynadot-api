@@ -8,6 +8,7 @@ class Dynadot{
 	}
 
 	private function call($command,$params){
+		//TODO: Format return from dynadot
 		echo $params;
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, "https://api.dynadot.com/api2.html?command=".$command."&key=".$this->key."&".$params);
