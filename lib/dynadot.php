@@ -45,15 +45,21 @@ class Dynadot{
 	}
 
 	public function setNameservers($domain,$ns){
-		trigger_error("Not implemented.", E_USER_ERROR);
+		$i = 0;
+		foreach($ns as $data){
+			$params .= "&domain".$i."=".$data['domain'];
+			$params .= (isset($data['language']) ?  "&ns".$i."=".$data['language'] : '');
+			$i++;
+		}
+		return $this->call('set_ns',$params);
 	}
 
 	public function setRenewOptions($domain,$option){
-		trigger_error("Not implemented.", E_USER_ERROR);
+		return $this->call('set_renew_option',"&domain=".$domain."&renew-option=".$option);
 	}
 
 	public function setFolder($domain,$folder){
-		trigger_error("Not implemented.", E_USER_ERROR);
+		return $this->call('set_folder',"&domain=".$domain."&folder=".$folder)
 	}
 }
 ?>
