@@ -47,9 +47,9 @@ class Dynadot{
 
 	public function setNameservers($domain,$ns){
 		$i = 0;
+		$params = "&domain"."=".$domain;
 		foreach($ns as $data){
-			$params .= "&domain".$i."=".$data['domain'];
-			$params .= (isset($data['language']) ?  "&ns".$i."=".$data['language'] : '');
+			$params .= "&ns".$i."=".$data;
 			$i++;
 		}
 		return $this->call('set_ns',$params);
