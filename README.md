@@ -4,7 +4,7 @@ API Documentation: http://www.dynadot.com/domain/api2.html
 
 ## Usage
 ### Initialize
-Make sure your server IP is whitelisted on the Dynadot [API settings page](https://www.dynadot.com/community/help/question/find-API-settings)
+Make sure your server IP is whitelisted on the Dynadot [API settings page](https://www.dynadot.com/account/domain/setting/api.html)
 ```
 $dynadot = new Dynadot("DYNADOT_API_KEY");
 ```
